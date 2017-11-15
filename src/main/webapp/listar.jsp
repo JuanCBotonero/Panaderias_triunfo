@@ -76,8 +76,15 @@
                         %>
 
                         <h7>Producto menos vendido</h7>
-                            <%                                Crud_ventas s = new Crud_ventas();
-                                Iterator it2 = s.traernombres().keySet().iterator();
+                            <%                               
+                                
+                                Crud_ventas s = new Crud_ventas();
+                                
+                                if(s.traernombres()==null){
+                                    
+                                }else{
+                                    
+                                      Iterator it2 = s.traernombres().keySet().iterator();
                                 int ko = 0;
                                 while (it2.hasNext()) {
                                     Integer key = (Integer) it2.next();
@@ -85,6 +92,10 @@
                                     break;
 
                                 }
+                                    
+                                }
+                                
+                              
 
 
                             %>
@@ -121,10 +132,16 @@
                         <div class="form_settings">
 
 
-                            <%                                System.out.println("lectura");
-
+                            <%                               
+                                
+                                System.out.println("lectura");
                                 Crud_ventas s1 = new Crud_ventas();
-                                List<Venta> activos = s.findAll();
+                                
+                                if(s.findAll()==null){
+                                    
+                                }else{
+                                    
+                                  List<Venta> activos = s.findAll();
                                 String h = "   ";
 
                                 out.println("<h1> id - producto " + "  -     " + "precio unitario " + "  -   " + " cantidad " + "  -   " + " valor total" +"  -   "+"Fecha"+ "</h1>");
@@ -134,6 +151,9 @@
                                      out.println("<h1>" + activos.get(i).getId() + "   -   " + activos.get(i).getProducto() + "  -    " + activos.get(i).getValor_unitario() + "  -    " + activos.get(i).getCantidad() + "   -   " + activos.get(i).getValor_total() + "   -   " + activos.get(i).getFecha() + "</h1>");
 
                                 }
+                                    
+                                }
+                           
 
 
                             %>
@@ -141,10 +161,16 @@
                             <h1>Registro de Compras</h1>
 
 
-                            <%                                System.out.println("lectura");
+                            <%                               
+                                
+                                System.out.println("lectura");
 
                                 Crud_Compras s6 = new Crud_Compras();
-                                List<compras> activos2 = s6.findAll();
+                                if(s6.findAll()==null){
+                                    
+                                }else{
+                                    
+                                     List<compras> activos2 = s6.findAll();
 
                                 out.println("<h1> id-produc " + "-" + "proveedor" + "-" + "precio unit" + "-" + " cantidad " + "-" + " valor tota" +"-"+"Fecha"+ "</h1>");
 
@@ -153,6 +179,9 @@
                                     out.println("<h1>" + activos2.get(i).getId() + "   -   " + activos2.get(i).getProducto() + "    -   " + activos2.get(i).getProveedor() + "  -    " + activos2.get(i).getValor_unitario() + "  -    " + activos2.get(i).getCantidad() + "   -   " + activos2.get(i).getValor_total() + "   -   " + activos2.get(i).getFecha() + "</h1>");
 
                                 }
+                                    
+                                }
+                               
 
 
                             %>

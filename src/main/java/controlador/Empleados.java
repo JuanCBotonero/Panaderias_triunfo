@@ -48,8 +48,10 @@ public class Empleados extends HttpServlet {
             String direccion = request.getParameter("direccion");
             String telefono = request.getParameter("telefono");
             String eps=request.getParameter("eps");
-            
-
+            if(Nombre_empleado==null){
+                request.getRequestDispatcher("empleados.jsp").forward(request, response);
+            }else{
+                
             Empleado r=new Empleado(Nombre_empleado,apellidos_empleado,cedula,edad,estado_civil,direccion,telefono,eps,"esperando");
             BD4 d = new BD4();
             d.addEmpleado(r);
@@ -61,6 +63,10 @@ public class Empleados extends HttpServlet {
             }
             request.getRequestDispatcher("empleados.jsp").forward(request, response);
             
+                
+            }
+
+          
             
         }
     }

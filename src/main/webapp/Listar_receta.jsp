@@ -79,7 +79,11 @@
                             <%                               
                                 
                                  Crud_ventas s = new Crud_ventas();
-                                Iterator it2 = s.traernombres().keySet().iterator();
+                                 if(s.traernombres()==null){
+                                     
+                                 }else{
+                                     
+                                      Iterator it2 = s.traernombres().keySet().iterator();
                                 int ko = 0;
                                 while (it2.hasNext()) {
                                     Integer key = (Integer) it2.next();
@@ -87,6 +91,9 @@
                                     break;
 
                                 }
+                                     
+                                 }
+                               
 
 
                             %>
@@ -125,7 +132,11 @@
                             <%                                System.out.println("lectura");
 
                                 Crud_Recetas s3 = new Crud_Recetas();
-                                List<receta> activos=s3.findAll();
+                                if(s3.findAll()==null){
+                                    
+                                }else{
+                                    
+                                    List<receta> activos=s3.findAll();
 
                                 for (int i = 0; i < activos.size(); i++) {
                                    
@@ -161,6 +172,9 @@
                                 }
 
 
+                                    
+                                }
+                                
                             %>
 
 

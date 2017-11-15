@@ -66,7 +66,7 @@ public class Crud_Recetas {
                 Tiempo_De_Prepararion = rs.getString("Tiempo_De_Prepararion");
                 registro.setTiempo_de_preparacion(Tiempo_De_Prepararion);
 
-                Receta = rs.getString("Receña");
+                Receta = rs.getString("Receta");
                 registro.setReceta(Receta);
 
                 Cantidad_De_Personas = rs.getString("Cantidad_De_Personas");
@@ -105,7 +105,7 @@ public class Crud_Recetas {
                 preparedStmt.setInt(1, id);
                 preparedStmt.setString(2, t.getRecetas().get(i).getNombre_Receta());
                 preparedStmt.setString(3, t.getRecetas().get(i).getTiempo_de_preparacion());
-                preparedStmt.setString(4, t.getRecetas().get(i).getReceña());
+                preparedStmt.setString(4, t.getRecetas().get(i).getReceta());
                 preparedStmt.setString(5, t.getRecetas().get(i).getCantidad_de_personas());
                 preparedStmt.setString(6, t.getRecetas().get(i).getIngredientes());
                 preparedStmt.setString(7, t.getRecetas().get(i).getPasos());

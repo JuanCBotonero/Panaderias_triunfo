@@ -78,8 +78,14 @@
                         %>
 
                         <h7>Producto menos vendido</h7>
-                            <%                                Crud_ventas s = new Crud_ventas();
-                                Iterator it2 = s.traernombres().keySet().iterator();
+                            <%                                
+                                
+                                Crud_ventas s = new Crud_ventas();
+                                if(s.traernombres()==null){
+                                    
+                                }else{
+                                    
+                                       Iterator it2 = s.traernombres().keySet().iterator();
                                 int ko = 0;
                                 while (it2.hasNext()) {
                                     Integer key = (Integer) it2.next();
@@ -87,6 +93,9 @@
                                     break;
 
                                 }
+                                    
+                                }
+                             
 
 
                             %>
@@ -127,8 +136,12 @@
 
                                 Crud_Empleados s1 = new Crud_Empleados();
                                 List<Empleado> activos = s1.findAll();
-
-                                 for (int i = 0; i < activos.size(); i++) {
+                                
+                                if(activos.size()==0){
+                                    
+                                }else{
+                                    
+                                           for (int i = 0; i < activos.size(); i++) {
 
                                     out.println("<h1> Nombres :" + activos.get(i).getNombre_empleado() + "</h1>");
                                     out.println("<h1> Apellidos : " + activos.get(i).getApellidos_empleado() + "</h1>");
@@ -142,6 +155,10 @@
                                     out.println("<h1>" + "-----------------------------------------------" + "</h1>");
 
                                 }
+                                    
+                                }
+
+                          
 
 
                             %>

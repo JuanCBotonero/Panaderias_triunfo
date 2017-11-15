@@ -75,8 +75,14 @@
                         %>
 
                         <h7>Producto menos vendido</h7>
-                            <%                                Crud_ventas s = new Crud_ventas();
-                                Iterator it2 = s.traernombres().keySet().iterator();
+                            <%                                
+                                
+                                Crud_ventas s = new Crud_ventas();
+                                if(s.traernombres()==null){
+                                    
+                                }else{
+                                    
+                                      Iterator it2 = s.traernombres().keySet().iterator();
                                 int ko = 0;
                                 while (it2.hasNext()) {
                                     Integer key = (Integer) it2.next();
@@ -84,6 +90,9 @@
                                     break;
 
                                 }
+                                    
+                                }
+                              
 
 
                             %>
@@ -131,10 +140,18 @@
                             <h2>(panaderia el triunfo)</h2>
                             <h3>Del 1 de septiembre al 31 de septiembre </h3>
                             <p>&nbsp;</p>
-                            <%                                System.out.println("lectura");
+                            <%                               
+                                
+                                System.out.println("lectura");
                                 Crud_ventas s3 = new Crud_ventas();
                                 BD d2 = new BD();
-                                List<Venta> activos = s.findAll();
+                                
+                                if(s.findAll()==null){
+                                    
+                                }else{
+                                    
+                                    
+                                    List<Venta> activos = s.findAll();
                                 String h = "   ";
 
                                 long tv = 0;
@@ -179,6 +196,12 @@
                                 out.println("<h1> Margen Bruto  " + "  -   " + " ( " + mb + "%" + " ) " + "</h1>");
                                 out.println("<h1> Ingresos Netos  " + "  -   " + " ( " + tu + " ) " + "</h1>");
 
+                                    
+                                    
+                                }
+                                    
+                                
+                                
 
                             %>
 

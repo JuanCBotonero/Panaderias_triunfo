@@ -78,7 +78,11 @@
                             <%    
 
                                 Crud_ventas s = new Crud_ventas();
-                                Iterator it2 = s.traernombres().keySet().iterator();
+                                if(s.traernombres()==null){
+                                    
+                                }else{
+                                    
+                                     Iterator it2 = s.traernombres().keySet().iterator();
                                 int ko = 0;
                                 while (it2.hasNext()) {
                                     Integer key = (Integer) it2.next();
@@ -87,6 +91,9 @@
 
                                 }
 
+                                    
+                                }
+                               
 
                             %>
 
@@ -127,7 +134,11 @@
                             <%                             
                                 
                                 Crud_ventas s1 = new Crud_ventas();
-                                List<Venta> activos =s.findAll();
+                                if(s.findAll()==null){
+                                    
+                                }else{
+                                    
+                                     List<Venta> activos =s.findAll();
                                 String h = "   ";
 
                                 long tv = 0;
@@ -158,6 +169,9 @@
                                 out.println("<h1>  " + op + "</h1>");
 
 
+                                    
+                                }
+                               
                             %>
 
 
@@ -165,7 +179,12 @@
 
                             <%                 
                                 Crud_ventas s7 = new Crud_ventas();
-                                List<Venta> activos1 =s7.findAll();
+                                if(s7.findAll()==null){
+                                    
+                                }else{
+                                    
+                                    
+                                    List<Venta> activos1 =s7.findAll();
 
                                 long tv1 = 0;
 
@@ -180,6 +199,8 @@
 
                                 out.println("<h1>  " + tv1 + "</h1>");
 
+                                }
+                                
                             %>
 
                             <h1>Dinero Gastado en Compras</h1>
@@ -188,7 +209,13 @@
 
                             <%               
                                 Crud_Compras s21 = new Crud_Compras();
-                                List<compras> activos21 = s21.findAll();
+                                
+                                if(s21.findAll()==null){
+                                    
+                                }else{
+                                    
+                                    
+                                        List<compras> activos21 = s21.findAll();
                                 long tc11 = 0;
 
                                 for (int i = 0; i < activos21.size(); i++) {
@@ -200,6 +227,8 @@
                                 }
 
                                 out.println("<h1> " + tc11 + "</h1>");
+                                }
+                            
 
 
                             %>

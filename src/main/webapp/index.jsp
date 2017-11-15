@@ -87,12 +87,20 @@
 
                         <h7>Producto menos vendido</h7>
                             <%                                Crud_ventas s = new Crud_ventas();
-                                Iterator it2 = s.traernombres().keySet().iterator();
-                                int ko = 0;
-                                while (it2.hasNext()) {
-                                    Integer key = (Integer) it2.next();
-                                    out.println("<h1> " + s.traernombres().get(key) + "</h1>");
-                                    break;
+
+                                if (s.traernombres() == null) {
+
+                                } else {
+
+                                    Iterator it2 = s.traernombres().keySet().iterator();
+
+                                    int ko = 0;
+                                    while (it2.hasNext()) {
+                                        Integer key = (Integer) it2.next();
+                                        out.println("<h1> " + s.traernombres().get(key) + "</h1>");
+                                        break;
+
+                                    }
 
                                 }
 
@@ -101,7 +109,12 @@
 
                         <h8>Producto mas vendido</h8>
 
-                        <%                            Crud_ventas s2 = new Crud_ventas();
+                        <%                           
+                            
+                            
+                            
+                            Crud_ventas s2 = new Crud_ventas();
+                            
                             int ju = s2.traernombres().size();
                             ju = ju + 1;
                             if (s2.traernombres().get(ju) == null) {
@@ -142,18 +155,14 @@
                     </form>
 
 
-                    <%                         
-                        
-                       
+                    <%                        Crud_ventas s1 = new Crud_ventas();
+                        List<Venta> activos = s1.findAll();
 
-                         Crud_ventas s1 = new Crud_ventas();
-                         List<Venta> activos = s1.findAll();
-                        
                         if (request.getAttribute("total") == null) {
 
                         } else {
                             int corredor = activos.size();
-                            corredor=corredor-1;
+                            corredor = corredor - 1;
                             out.println("<h1> " + "El valor a pagar por : " + activos.get(corredor).getCantidad() + " " + activos.get(corredor).getProducto() + " es de $" + request.getAttribute("total") + "</h1>");
 
                         }

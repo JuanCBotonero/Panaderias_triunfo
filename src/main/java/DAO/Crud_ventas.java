@@ -92,7 +92,7 @@ public class Crud_ventas {
         Date date = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         System.out.println("Hora y fecha: " + hourdateFormat.format(date));
-        String fecha_y_hora=hourdateFormat.format(date);
+        String fecha_y_hora = hourdateFormat.format(date);
 
         PreparedStatement preparedStmt = null;
 
@@ -121,32 +121,39 @@ public class Crud_ventas {
 
         ArrayList<Venta> activos = null;
         activos = (ArrayList<Venta>) findAll();
-
         Map<String, Integer> map = new HashMap<String, Integer>();
         Map<Integer, String> map2 = new HashMap<Integer, String>();
 
-        for (int i = 0; i < activos.size(); i++) {
-            map.put(activos.get(i).getProducto(), i);
-        }
+        if (activos == null) {
 
-        Iterator it = map.keySet().iterator();
-        while (it.hasNext()) {
-            String key = (String) it.next();
-//            System.out.println("Clave: " + key );
-            int temp = 0;
+        } else {
+
             for (int i = 0; i < activos.size(); i++) {
-                if (key.equals(activos.get(i).getProducto())) {
-                    temp++;
-                }
+                map.put(activos.get(i).getProducto(), i);
             }
 
-            map2.put(temp, key);
-        }
+            Iterator it = map.keySet().iterator();
+            while (it.hasNext()) {
+                String key = (String) it.next();
+//            System.out.println("Clave: " + key );
+                int temp = 0;
+                for (int i = 0; i < activos.size(); i++) {
+                    if (key.equals(activos.get(i).getProducto())) {
+                        temp++;
+                    }
+                }
 
-        Iterator it2 = map2.keySet().iterator();
-        while (it2.hasNext()) {
-            Integer key = (Integer) it2.next();
-            System.out.println("Clave: " + key + " -> Valor: " + map2.get(key));
+                map2.put(temp, key);
+            }
+
+            Iterator it2 = map2.keySet().iterator();
+            while (it2.hasNext()) {
+                Integer key = (Integer) it2.next();
+                System.out.println("Clave: " + key + " -> Valor: " + map2.get(key));
+            }
+
+            return map2;
+
         }
 
         return map2;

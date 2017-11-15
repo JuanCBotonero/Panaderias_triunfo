@@ -76,7 +76,11 @@
                             <%                               
                                 
                                  Crud_ventas s = new Crud_ventas();
-                                Iterator it2 = s.traernombres().keySet().iterator();
+                                 if(s.traernombres()==null){
+                                     
+                                 }else{
+                                     
+                                       Iterator it2 = s.traernombres().keySet().iterator();
                                 int ko = 0;
                                 while (it2.hasNext()) {
                                     Integer key = (Integer) it2.next();
@@ -84,6 +88,9 @@
                                     break;
 
                                 }
+                                     
+                                 }
+                              
 
 
                             %>
