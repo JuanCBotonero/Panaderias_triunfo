@@ -47,7 +47,8 @@ public class Index extends HttpServlet {
             Venta j = new Venta(producto, valor_unitario, cantidad, total);
             BD d = new BD();
             d.addVenta(j);
-            Crud_ventas s = new Crud_ventas();   
+            Crud_ventas s = new Crud_ventas(); 
+            System.out.println("op");
             try {
                 System.out.println(s.insert(d));
                 request.setAttribute("total", total);
