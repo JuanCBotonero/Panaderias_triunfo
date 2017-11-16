@@ -13,4 +13,87 @@
         <welcome-file>default.jsp</welcome-file>
     </welcome-file-list>
      
+     
+     
+     <servlet>
+        <servlet-name>Index</servlet-name>
+        <servlet-class>controlador.Index</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>compra</servlet-name>
+        <servlet-class>controlador.compra</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>listar</servlet-name>
+        <servlet-class>controlador.listar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>generar_estados</servlet-name>
+        <servlet-class>controlador.generar_estados</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>caja</servlet-name>
+        <servlet-class>controlador.caja</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>recetas</servlet-name>
+        <servlet-class>controlador.recetas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Listar_receta</servlet-name>
+        <servlet-class>controlador.Listar_receta</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Empleados</servlet-name>
+        <servlet-class>controlador.Empleados</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>listar_Empleados</servlet-name>
+        <servlet-class>controlador.listar_Empleados</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Index</servlet-name>
+        <url-pattern>/Index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>compra</servlet-name>
+        <url-pattern>/compra</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>listar</servlet-name>
+        <url-pattern>/listar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>generar_estados</servlet-name>
+        <url-pattern>/generar_estados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>caja</servlet-name>
+        <url-pattern>/caja</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>recetas</servlet-name>
+        <url-pattern>/recetas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Listar_receta</servlet-name>
+        <url-pattern>/Listar_receta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Empleados</servlet-name>
+        <url-pattern>/Empleados</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>listar_Empleados</servlet-name>
+        <url-pattern>/listar_Empleados</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+
+     
+     
+     
 </web-app>
