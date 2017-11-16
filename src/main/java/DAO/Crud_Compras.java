@@ -9,6 +9,25 @@ package Dao;
 import dato.Venta;
 import dato.compras;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import servicios.BD;
+import servicios.BD2;import dato.Venta;
+import dato.compras;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,7 +53,7 @@ import servicios.BD2;
 
 public class Crud_Compras {
 
-    public List<compras> findAll() throws SQLException {
+    public List<compras> findAll() throws SQLException, URISyntaxException {
         List<compras> departamentos = null;
         String query = "SELECT * FROM Compras";
         Connection connection = Conexion.getConnection();
@@ -90,7 +109,7 @@ public class Crud_Compras {
         return departamentos;
     }
 
-    public boolean insert(BD2 t) throws SQLException {
+    public boolean insert(BD2 t) throws SQLException, URISyntaxException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
         String query = " insert into Compras (IdCompras,Producto,Proveedor,Valor_Unitario,Cantidad,Valor_total,Fecha) " + "values (?,?,?,?,?,?,?)";

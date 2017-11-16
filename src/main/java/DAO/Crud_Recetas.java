@@ -9,6 +9,25 @@ package Dao;
 import dato.Venta;
 import dato.receta;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import servicios.BD;
+import servicios.BD3;import dato.Venta;
+import dato.receta;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,7 +53,7 @@ import servicios.BD3;
 
 public class Crud_Recetas {
 
-    public List<receta> findAll() throws SQLException {
+    public List<receta> findAll() throws SQLException, URISyntaxException {
         List<receta> departamentos = null;
         String query = "SELECT * FROM Recetas";
         Connection connection = Conexion.getConnection();
@@ -90,7 +109,7 @@ public class Crud_Recetas {
         return departamentos;
     }
 
-    public boolean insert(BD3 t) throws SQLException {
+    public boolean insert(BD3 t) throws SQLException, URISyntaxException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
         String query = " insert into Recetas (IdRecetas,Nombre_Receta,Tiempo_De_Prepararion,Receña,Cantidad_De_Personas,Ingredientes,Pasos) " + "values (?,?,?,?,?,?,?)";

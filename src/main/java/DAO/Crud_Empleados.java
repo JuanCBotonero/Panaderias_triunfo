@@ -8,6 +8,19 @@ package Dao;
 ;
 import dato.Empleado;
 import dato.receta;
+import java.net.URISyntaxException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import servicios.BD4;import dato.Empleado;
+import dato.receta;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,7 +41,7 @@ import servicios.BD4;
 
 public class Crud_Empleados {
 
-    public List<Empleado> findAll() throws SQLException {
+    public List<Empleado> findAll() throws SQLException, URISyntaxException {
         List<Empleado> departamentos = null;
         String query = "SELECT * FROM Empleados";
         Connection connection = Conexion.getConnection();
@@ -94,7 +107,7 @@ public class Crud_Empleados {
         return departamentos;
     }
 
-    public boolean insert(BD4 t) throws SQLException {
+    public boolean insert(BD4 t) throws SQLException, URISyntaxException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
         String query = " insert into Empleados (Nombre_empleado,apellidos_empleado,cedula,edad,estado_civil,direccion,telefono,eps,fecha_de_contratacion) " + "values (?,?,?,?,?,?,?,?,?)";
