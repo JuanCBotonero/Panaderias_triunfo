@@ -80,7 +80,6 @@
             <url>http://download.java.net/maven/glassfish</url>
         </pluginRepository>
     </pluginRepositories>
-
-    
+       
     
 </project>
