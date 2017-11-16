@@ -39,7 +39,7 @@ public class Conexion {
         if (CONEXION != null) {
             return CONEXION;
         } else {
-            URI dbUri = new URI(System.getenv("DATABASE_URL"));
+            URI dbUri = new URI(System.getenv("postgres://suucpkvdssvvmo:1e9b38c3a6d53bdbb562788f47a1a006a019a1fba892d58561e397b9a4c3b340@ec2-50-16-199-246.compute-1.amazonaws.com:5432/d9gga6t8c1ub4a"));
             String username = dbUri.getUserInfo().split(":")[0];
             String password = dbUri.getUserInfo().split(":")[1];
             String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
