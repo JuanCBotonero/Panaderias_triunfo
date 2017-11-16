@@ -11,6 +11,7 @@ import dato.Venta;
 import dato.receta;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,12 +57,17 @@ public class recetas extends HttpServlet {
             BD3 d = new BD3();
             d.addReceta(r);
             Crud_Recetas s = new Crud_Recetas();
+            
             try {
                 System.out.println(s.insert(d));
                 request.getRequestDispatcher("recetas.jsp").forward(request, response);
+            
             } catch (SQLException ex) {
                 Logger.getLogger(recetas.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (URISyntaxException ex) {
+                Logger.getLogger(recetas.class.getName()).log(Level.SEVERE, null, ex);
             }
+                
             
             
         }

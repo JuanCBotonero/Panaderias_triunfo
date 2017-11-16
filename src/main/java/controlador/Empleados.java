@@ -14,6 +14,7 @@ import dato.Venta;
 import dato.receta;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,11 +57,15 @@ public class Empleados extends HttpServlet {
             BD4 d = new BD4();
             d.addEmpleado(r);
             Crud_Empleados s2 = new Crud_Empleados();
-            try {
-                System.out.println(s2.insert(d));
-            } catch (SQLException ex) {
-                Logger.getLogger(Empleados.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
+                try {
+                    System.out.println(s2.insert(d));
+                } catch (SQLException ex) {
+                    Logger.getLogger(Empleados.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (URISyntaxException ex) {
+                    Logger.getLogger(Empleados.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
             request.getRequestDispatcher("empleados.jsp").forward(request, response);
             
                 

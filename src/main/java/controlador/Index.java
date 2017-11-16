@@ -9,6 +9,7 @@ import Dao.Crud_ventas;
 import dato.Venta;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,13 +50,18 @@ public class Index extends HttpServlet {
             d.addVenta(j);
             Crud_ventas s = new Crud_ventas(); 
             System.out.println("op");
+         
             try {
                 System.out.println(s.insert(d));
                 request.setAttribute("total", total);
                 request.getRequestDispatcher("index.jsp").forward(request, response);
+           
             } catch (SQLException ex) {
                 Logger.getLogger(Index.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (URISyntaxException ex) {
+                Logger.getLogger(Index.class.getName()).log(Level.SEVERE, null, ex);
             }
+               
            
             
 

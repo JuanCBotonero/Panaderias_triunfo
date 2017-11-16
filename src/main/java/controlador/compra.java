@@ -9,6 +9,7 @@ import Dao.Crud_Compras;
 import dato.compras;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,13 +58,18 @@ public class compra extends HttpServlet {
             BD2 d2 = new BD2();
             d2.addCompra(co);
             Crud_Compras s = new Crud_Compras();
+         
             try {
                 System.out.println(s.insert(d2));
-                 request.setAttribute("total", total);
+                request.setAttribute("total", total);
                 request.getRequestDispatcher("compra.jsp").forward(request, response);
+           
             } catch (SQLException ex) {
                 Logger.getLogger(compra.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (URISyntaxException ex) {
+                Logger.getLogger(compra.class.getName()).log(Level.SEVERE, null, ex);
             }
+                 
 
         }
     }
